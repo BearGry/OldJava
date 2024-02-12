@@ -1,0 +1,28 @@
+public class Main {
+2.    public static void main(String[] args) {  
+3.        JFrame jFrame=new JFrame("This is a JFrame");  
+4.        jFrame.setLayout(new FlowLayout(FlowLayout.LEFT));  
+5.        jFrame.setSize(300,300);  
+6.        jFrame.setVisible(true);  
+7.        jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);  
+8.        JLabel jLabel=new JLabel("哈喽:");  
+9.        jFrame.add(jLabel);  
+10.        JTextField jTextField=new JTextField("请输入吧");  
+11.        jFrame.add(jTextField);  
+12.        JButton jButton=new JButton("确定");  
+13.        jFrame.add(jButton,SwingConstants.LEFT);  
+14.        jButton.addActionListener(new AbstractAction() {  
+15.            @Override  
+16.            public void actionPerformed(ActionEvent e) {  
+17.                JDialog dialog=new JDialog(jFrame,"弹窗");  
+18.                dialog.setSize(200,200);  
+19.                dialog.setLocation(210,210);  
+20.                dialog.setVisible(true);  
+21.                dialog.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);  
+22.                JTextArea j=new JTextArea("hello "+jTextField.getText());  
+23.                dialog.add(j);  
+24.                dialog.setVisible(true);  
+25.            }  
+26.        });  
+27.    }  
+28.}  
